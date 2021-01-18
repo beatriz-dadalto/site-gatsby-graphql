@@ -1,10 +1,10 @@
-___
+---
 date: 2021-01-17 05:54:23
 title: "Two things are infinite"
 description: "And i'm not sure about the universe."
-category: Misc
+category: "Misc"
 background: "#7AAB13"
-___
+---
 
 
 # Lorem ipsum
