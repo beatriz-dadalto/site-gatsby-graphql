@@ -20,15 +20,15 @@ export const PostItemWrapper = styled.section`
 
 export const PostItemTag = styled.div`
   align-items: center;
-  background: ${props => props.background};
+  background: ${props => (props.background ? props.background : "#1fa1f2")};
   border-radius: 50%;
   color: #fff;
   display: flex;
   font-size: 1.3rem;
   font-weight: 700;
   justify-content: center;
-  min-height: 100px;
-  min-width: 100px;
+  min-height: 90px;
+  min-width: 90px;
   text-transform: uppercase;
 `
 
