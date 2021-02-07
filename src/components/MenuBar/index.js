@@ -5,17 +5,23 @@ import { SearchAlt2 as SearchIcon } from "@styled-icons/boxicons-regular/SearchA
 import { ArrowUpOutline as ArrowIcon } from "@styled-icons/typicons/ArrowUpOutline"
 import { LightBulb as LightIcon } from "@styled-icons/heroicons-outline/LightBulb"
 import { Grid as GridIcon } from "@styled-icons/bootstrap/Grid"
+import { ThList as ListIcon } from "@styled-icons/typicons/ThList"
 
 import * as S from "./styled"
 
 const MenuBar = () => {
   const [theme, setTheme] = useState(null)
+  const [display, setDisplay] = useState(null)
 
   const isDarkMode = theme === 'dark'
+  const isListMode = display === 'list'
 
   useEffect(() => {
     setTheme(window.__theme)
+    setDisplay(window.__display)
+
     window.__onThemeChange = () => setTheme(window.__theme)
+    window.__onDisplayChange = () => setDisplay(window.__display)
   }, [])
 
   return (
@@ -42,8 +48,10 @@ const MenuBar = () => {
         >
           <LightIcon />
         </S.MenuBarItem>
-        <S.MenuBarItem title="Mudar visualização">
-          <GridIcon />
+        <S.MenuBarItem title="Mudar visualização" onClick={() => {
+          window.__setPreferredDisplay(isListMode ? 'grid' : 'list')
+        }}>
+          {isListMode ? <GridIcon /> : <ListIcon />}
         </S.MenuBarItem>
         <S.MenuBarItem title="Ir para o topo">
           <ArrowIcon />
