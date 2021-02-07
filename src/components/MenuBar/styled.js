@@ -1,13 +1,13 @@
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import styled from "styled-components"
+import { Link } from "gatsby"
 
 export const MenuBarWrapper = styled.aside`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #192734;
-  border-left: 1px solid #38444d;
+  background-color: var(--mediumBackground);
+  border-left: 1px solid var(--borders);
   height: 100vh;
   padding: 0.8rem 0;
   position: fixed;
@@ -25,9 +25,23 @@ export const MenuBarLink = styled(Link)`
 `
 
 export const MenuBarItem = styled.span`
-  color: #8899a6;
+  color: var(--texts);
   cursor: pointer;
   display: block;
   height: 3.75rem;
   padding: 1.1rem;
+  position: relative;
+  width: 3.75rem;
+
+  &.light {
+    color: #D4D400;
+
+    &:hover {
+      color: #E2E240;
+    }
+  }
+
+  &:hover {
+    color: var(--highlight);
+  }
 `

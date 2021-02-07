@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const SidebarWrapper = styled.aside`
-  background: #192734;
-  border-right: 1px solid #38444d;
+  background: var(--mediumBackground);
+  border-right: 1px solid var(--borders);
   display: flex;
   align-items: center;
   flex-direction: column;
